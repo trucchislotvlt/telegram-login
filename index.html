@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login con Telegram</title>
+    <meta charset="utf-8">
+    <style>
+      body {
+        background-color: #1e1e1e;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        margin-bottom: 10px;
+      }
+      p {
+        margin-bottom: 20px;
+      }
+    </style>
+    <script type="text/javascript">
+      function onTelegramAuth(user) {
+        alert("Ciao, " + user.first_name + "! Login avvenuto con successo.");
+        console.log(user);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Benvenuto! 🔐</h1>
+    <p>Clicca il bottone qui sotto per accedere con Telegram:</p>
+
+    <!-- BOTTONE LOGIN TELEGRAM -->
+    <script async src="https://telegram.org/js/telegram-widget.js?7"
+            data-telegram-login="trucchiVLTbot"
+            data-size="large"
+            data-userpic="false"
+            data-request-access="write"
+            data-on-auth="onTelegramAuth">
+    </script>
+  </body>
+</html>
